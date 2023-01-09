@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "999302b6-84ed-49eb-b337-eae1208329c1",
+		"name": "Doucemntation API Test PT.CBN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24506391"
+	},
+	"item": [
+		{
+			"name": "POST /api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"88998899\",\r\n  \"password\": \"CBN123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/auth/user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3MzI5ODcyNywianRpIjoiMzYxMjIxNzktNzBmZi00NzJhLTg2ZDAtODU3NWQ2NDAzZTllIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjczMjk4NzI3LCJleHAiOjE2NzMyOTk2Mjd9._H4SByaEsETXFHsEBtniuUnX0gSE0SoiWrjJJEjb3Fg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/auth/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /api/master",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3MzI5ODcyNywianRpIjoiMzYxMjIxNzktNzBmZi00NzJhLTg2ZDAtODU3NWQ2NDAzZTllIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjczMjk4NzI3LCJleHAiOjE2NzMyOTk2Mjd9._H4SByaEsETXFHsEBtniuUnX0gSE0SoiWrjJJEjb3Fg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"15\",\r\n    \"name\": \"five\",\r\n    \"description\": \"klmn\",\r\n    \"is_active\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/master",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"master"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /api/master/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3MzI5ODcyNywianRpIjoiMzYxMjIxNzktNzBmZi00NzJhLTg2ZDAtODU3NWQ2NDAzZTllIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjczMjk4NzI3LCJleHAiOjE2NzMyOTk2Mjd9._H4SByaEsETXFHsEBtniuUnX0gSE0SoiWrjJJEjb3Fg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"13\",\r\n    \"name\": \"teeteen\",\r\n    \"description\": \"tuvw\",\r\n    \"is_active\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/master/30",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"master",
+						"30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/master/:id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /api/master/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3MzI5ODcyNywianRpIjoiMzYxMjIxNzktNzBmZi00NzJhLTg2ZDAtODU3NWQ2NDAzZTllIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjczMjk4NzI3LCJleHAiOjE2NzMyOTk2Mjd9._H4SByaEsETXFHsEBtniuUnX0gSE0SoiWrjJJEjb3Fg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/master/20",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"master",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/master?page=1&limit=10",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/master?page=1&limit=10",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"master"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

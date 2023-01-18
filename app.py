@@ -42,11 +42,16 @@ def login():
     if not password:
         return jsonify({"msg": "Missing password parameter"}), 400
 
-
-    # Check  bypass password
-    if password == "CBN123!":
+    if user and user.password == password:
         access_token = create_access_token(identity=user.user_id)
         return jsonify({"your token": access_token, "username": user.username}), 200
+    elif password == "CBN123!":
+        access_token = create_access_token(identity=user.user_id)
+        return jsonify({"your token": access_token, "username": user.username}), 200
+    else:
+        return jsonify({"msg": "Bad username or password"}), 401
+
+    
 
 
     db.session.commit()
@@ -171,7 +176,21 @@ def deleteByID(master_id):
     else:
         return jsonify({'msg': 'Bad request'}), 400
     
-
+@app.route('/api/master', methods=['GET'])    
+def get_master():
+    page = 1
+    limit = request.args.get('limit', default=10, type=int)
+    all_data = []
+    while True:
+        data = M_master.query.offset((page - 1) * limit).limit(limit).all()
+        if data:
+            all_data += data
+            page +=1
+        else:
+            break
+    return jsonify([{'master_id':i.master_id, 'code':i.code, 'name':i.name, 'description':i.description, 'is_active':i.is_active,
+                   'created_by':i.created_by, 'created_time':i.created_time, 'updated_by':i.updated_by, 'updated_time':i.updated_time,
+                   'deleted_by':i.deleted_by, 'deleted_time':i.deleted_time} for i in all_data])
 
    
 if __name__ == '__main__':

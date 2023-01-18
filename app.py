@@ -51,19 +51,8 @@ def login():
     else:
         return jsonify({"msg": "Bad username or password"}), 401
 
-    
-
-
     db.session.commit()
-
-
-    if user:
-        access_token = create_access_token(identity=user.user_id)
-        
-        return jsonify({"your token": access_token, "username": user.username}), 200
-    else:
-        return jsonify({"msg": "Bad username or password"}), 401
-
+    
 @app.route('/api/auth/user', methods=['GET'])
 @jwt_required()
 def currentUser():
